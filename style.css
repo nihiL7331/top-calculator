@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "DSEG7";
+  src: url("fonts/DSEG7Modern-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  background-color: #1a1b26;
+  color: #787c99;
+}
+
+header,
+footer {
+  text-align: center;
+  width: 100vh;
+  background-color: #24283b;
+}
+
+header {
+  padding: 24px 0;
+  font-weight: 800;
+  font-size: 48px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.calculator {
+  border: 8px solid #787c99;
+  border-radius: 8px;
+}
+
+.display {
+  width: 400px;
+  background-color: #24283b;
+  height: 64px;
+  position: relative;
+  display: inline-block;
+}
+
+.ghost,
+.value {
+  font-family: DSEG7;
+  font-size: 48px;
+  background-color: transparent;
+  position: absolute;
+  top: 8px;
+  left: 4px;
+}
+
+.ghost {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.value {
+  color: #c0caf5;
+}
+
+.spacing {
+  width: 100%;
+  height: 8px;
+  background-color: #787c99;
+}
+
+.buttons {
+  display: flex;
+  max-width: 400px;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  width: 100px;
+  height: 100px;
+  font-family: DSEG7;
+  font-size: 36px;
+  border: 1px solid #787c9988;
+}
+
+.buttons button:hover {
+  background-color: #24283b;
+}
+
+.buttons button:active {
+  background-color: #787c9988;
+}
+
+footer {
+  padding: 8px 0;
+}
