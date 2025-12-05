@@ -121,7 +121,6 @@ function onButtonClicked(e) {
       break;
     case "comma":
       appendValue(".");
-      updateDisplay();
       break;
     case "equals":
       updateValue();
@@ -135,6 +134,50 @@ function onButtonClicked(e) {
         appendValue(id.charAt(3));
       } else updateSign(id);
   }
+
+  console.log(newVal);
+}
+
+function onKeyPressed(e) {
+  const key = e.key;
+  console.log(key);
+  if (key.length === 1 && Number.isInteger(+key)) {
+    appendValue(+key);
+    return;
+  }
+  switch (key) {
+    case "Backspace":
+      removeValue();
+      break;
+    case "%":
+      percentValue();
+      break;
+    case "c":
+      clearValues();
+      break;
+    case ".":
+      appendValue(".");
+      break;
+    case ",":
+      appendValue(".");
+      break;
+    case "=":
+      updateValue();
+      break;
+    case "+":
+      updateSign("plus");
+      break;
+    case "-":
+      updateSign("minus");
+      break;
+    case "*":
+      updateSign("mult");
+      break;
+    case "/":
+      updateSign("divide");
+      break;
+  }
 }
 
 buttonContainer.addEventListener("click", onButtonClicked);
+document.addEventListener("keydown", onKeyPressed);
